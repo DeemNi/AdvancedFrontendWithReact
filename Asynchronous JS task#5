@@ -1,0 +1,38 @@
+// Please, implement a function accountPatients that takes a count of beds in a hospital and returns an array of two functions:
+// the first one for adding a patient
+// the second one for discharging a patient
+// Initially there are no patients in the hospital.
+// accountPatients should keep track of free beds in a hospital and every time when a patient is admitted or discharged, print the count to the console like in examples:
+// A patient was admitted, 34 beds are available
+// A patient was discharged, 54 beds are available
+// When there are no beds available, 
+// Can not admit a patient, no beds available should be printed
+// When there is an attempt to discharge a patient when there are no patients,
+// There are no patients to discharge should be printed
+
+const accountPatients = (countBeds) => {
+ 
+    let patient = 0;
+
+    const addingPatient = () => {
+        if(patient < countBeds) {
+            patient++;
+            console.log(`A patient was admitted, ${countBeds - patient} beds are available`)
+        } else {
+            console.log('Can not admit a patient, no beds available')
+        }
+    }
+
+        const dischargingPatient = () => {
+            if(patient > 0) {
+                patient--;
+                console.log(`A patient was discharged, ${countBeds - patient} beds are available`)
+        } else {
+            console.log('There are no patients to discharge')
+        }
+    }
+
+    return [addingPatient, dischargingPatient];
+}
+
+
