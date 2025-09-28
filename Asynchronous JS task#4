@@ -1,0 +1,7 @@
+// Implement the take() function that converts a sequence of iterated values into a sequence of length n.
+
+function* take(n, iterable) {
+    for(let i = 0; i < n; i++) {
+        yield iterable[i];
+    }
+}
